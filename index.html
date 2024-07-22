@@ -132,6 +132,18 @@
             var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
             window.open(url, '_blank');
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var buyButtons = document.querySelectorAll('.projects__button-buy');
+            buyButtons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var product = this.getAttribute('data-product');
+                    var price = this.getAttribute('data-price');
+                    openOrderForm(product, price);
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -217,272 +229,86 @@
             <div class="filters__sections">
                 <!--=============== PROJECTS ===============-->
                 <article class="projects__card">
-    <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-    <img src="assets/img/project1.webp" alt="" class="projects__img">
+                    <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
+                    <img src="assets/img/project1.webp" alt="" class="projects__img">
 
-    <div class="projects__modal">
-        <div>
-            <span class="projects__subtitle">Nexion</span>
-            <h3 class="projects__title">Discord bot to assist admins in the management of their community</h3>
-            <!-- Buy Now button placed below the text -->
-            <button class="projects__button-buy" onclick="openOrderForm('Nexion', '$50')">Buy Now</button>
-            <!-- Previous link button -->
-            <a href="https://nexion.xyz" target="_blank" class="projects__button button button__small">
-                <i class="ri-link"></i>
-            </a>
-        </div>
-    </div>
-</article>
-
-<article class="projects__card">
-    <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-    <img src="assets/img/project2.webp" alt="" class="projects__img">
-
-    <div class="projects__modal">
-        <div>
-            <span class="projects__subtitle">NexoBot</span>
-            <h3 class="projects__title">A comprehensive tool for server management</h3>
-            <!-- Buy Now button placed below the text -->
-            <button class="projects__button-buy" onclick="openOrderForm('NexoBot', '$30')">Buy Now</button>
-            <!-- Previous link button -->
-            <a href="https://www.youtube.com/channel/UCHaHxkSUhgf1DFEyBfBusDg" target="_blank" class="projects__button button button__small">
-                <i class="ri-link"></i>
-            </a>
-        </div>
-    </div>
-</article>
-
-
-                    <article class="projects__card">
-                        <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                        <img src="assets/img/project2.webp" alt="" class="projects__img">
-                        <button class="projects__button-buy" onclick="openOrderForm('NexoBot', '$30')">Buy Now</button> <!-- Buy Now button -->
-
-                        <div class="projects__modal">
-                            <div>
-                                <span class="projects__subtitle">NexoBot</span>
-                                <h3 class="projects__title">A comprehensive tool for server management</h3>
-                                <!-- Replaced the original button with Buy Now button -) -->
-                            <button class="projects__button-buy" onclick="openOrderForm('NexoBot', '$30')">Buy Now</button>
-                            <a href="https://nexion.xyz" target="_blank" class="projects__button button button__small">
-                                    <i class="ri-link"></i>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!--=============== SKILLS ===============-->
-                <div class="skills__content grid" data-content id="skills">
-                    <div class="skills__area">
-                        <h3 class="skills__title">Frontend Developer</h3>
-
-                        <div class="skills__box">
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">HTML</h3>
-                                        <span class="skills__level">Basic</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">CSS</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">JavaScript</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">VueJS</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Nexion</span>
+                            <h3 class="projects__title">Discord Websocket</h3>
+                            <a href="https://nexion.xyz" target="_blank" class="projects__button">
+                                <i class="ri-link"></i>
+                            </a>
+                            <button class="projects__button-buy" data-product="Discord Websocket" data-price="$50">
+                                Buy Now
+                            </button>
                         </div>
                     </div>
+                </article>
 
-                    <div class="skills__area">
-                        <h3 class="skills__title">Backend Developer</h3>
+                <article class="projects__card">
+                    <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
+                    <img src="assets/img/project2.jpg" alt="" class="projects__img">
 
-                        <div class="skills__box">
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Node Js</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">PHP</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Python</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">MySQL</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Nexion</span>
+                            <h3 class="projects__title">SoundCloud API</h3>
+                            <a href="https://nexion.xyz" target="_blank" class="projects__button">
+                                <i class="ri-link"></i>
+                            </a>
+                            <button class="projects__button-buy" data-product="SoundCloud API" data-price="$75">
+                                Buy Now
+                            </button>
                         </div>
                     </div>
+                </article>
 
-                    <div class="skills__area">
-                        <h3 class="skills__title">Designer</h3>
+                <article class="projects__card">
+                    <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
+                    <img src="assets/img/project3.png" alt="" class="projects__img">
 
-                        <div class="skills__box">
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Figma</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Adobe XD</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Photoshop</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Blender</h3>
-                                        <span class="skills__level">Basic</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Nexion</span>
+                            <h3 class="projects__title">Instagram API</h3>
+                            <a href="https://nexion.xyz" target="_blank" class="projects__button">
+                                <i class="ri-link"></i>
+                            </a>
+                            <button class="projects__button-buy" data-product="Instagram API" data-price="$100">
+                                Buy Now
+                            </button>
                         </div>
                     </div>
-
-                    <div class="skills__area">
-                        <h3 class="skills__title">Others</h3>
-
-                        <div class="skills__box">
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Docker</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">Kubernetes</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="skills__group">
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">GIT</h3>
-                                        <span class="skills__level">Advanced</span>
-                                    </div>
-                                </div>
-
-                                <div class="skills__data">
-                                    <i class="ri-checkbox-circle-line"></i>
-
-                                    <div>
-                                        <h3 class="skills__name">SCRUM</h3>
-                                        <span class="skills__level">Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
     </main>
 
-    <!--=============== ORDER FORM POPUP ===============-->
-    <div class="overlay" id="overlay" onclick="closeOrderForm()"></div>
+    <div class="overlay" id="overlay"></div>
+
     <div class="popup" id="order-form">
-        <h3>Order Now</h3>
+        <h3>Order Form</h3>
         <p>Product: <span id="product-name"></span></p>
         <p>Price: <span id="product-price"></span></p>
-        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
-        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
-        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
-        <select id="country" onchange="validateForm()">
-            <option value="Pakistan">Pakistan</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="United States">United States</option>
+        <input type="text" id="name" placeholder="Your Name" oninput="validateForm()">
+        <input type="text" id="phone" placeholder="Your Phone Number" oninput="validateForm()">
+        <input type="email" id="email" placeholder="Your Email" oninput="validateForm()">
+        <select id="country" oninput="validateForm()">
+            <option value="">Select Country</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+            <!-- Add more countries as needed -->
         </select>
         <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
-        <button class="cancel" onclick="closeOrderForm()">Cancel Order</button>
+        <button class="cancel" onclick="closeOrderForm()">Cancel</button>
     </div>
 
     <!--=============== SCROLL UP ===============-->
     <a href="#" class="scrollup" id="scroll-up">
-        <i class="ri-arrow-up-line scrollup__icon"></i>
+        <i class="ri-arrow-up-line"></i>
     </a>
 
     <!--=============== SCROLL REVEAL ===============-->

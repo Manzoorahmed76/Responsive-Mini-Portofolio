@@ -33,10 +33,60 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             z-index: 2;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        .popup h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .popup p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .popup input,
+        .popup select,
+        .popup button {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .popup button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+
+        .popup button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .popup .cancel {
+            background-color: #dc3545;
+        }
+
+        .popup .cancel:hover {
+            background-color: #c82333;
         }
     </style>
 
@@ -184,14 +234,15 @@
                     </article>
 
                     <article class="projects__card">
+                        <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
                         <img src="assets/img/project2.webp" alt="" class="projects__img">
-                        <button class="projects__button-buy" onclick="openOrderForm('YouTube Channel - Drone Videos', '$30')">Buy Now</button> <!-- Buy Now button -->
+                        <button class="projects__button-buy" onclick="openOrderForm('NexoBot', '$30')">Buy Now</button> <!-- Buy Now button -->
 
                         <div class="projects__modal">
                             <div>
-                                <span class="projects__subtitle">NANO</span>
-                                <h3 class="projects__title">YouTube channel - Drone videos</h3>
-                                <a href="https://www.youtube.com/channel/UCHaHxkSUhgf1DFEyBfBusDg" target="_blank" class="projects__button button button__small">
+                                <span class="projects__subtitle">NexoBot</span>
+                                <h3 class="projects__title">A comprehensive tool for server management</h3>
+                                <a href="https://nexion.xyz" target="_blank" class="projects__button button button__small">
                                     <i class="ri-link"></i>
                                 </a>
                             </div>
@@ -208,36 +259,36 @@
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">HTML</h3>
                                         <span class="skills__level">Basic</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">CSS</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">JavaScript</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">VueJS</h3>
                                         <span class="skills__level">Intermediate</span>
@@ -254,36 +305,36 @@
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Node Js</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">PHP</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Python</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">MySQL</h3>
                                         <span class="skills__level">Advanced</span>
@@ -300,36 +351,36 @@
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Figma</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Adobe XD</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Photoshop</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Blender</h3>
                                         <span class="skills__level">Basic</span>
@@ -346,36 +397,36 @@
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Docker</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">Kubernetes</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">GIT</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
-    
+
                                     <div>
                                         <h3 class="skills__name">SCRUM</h3>
                                         <span class="skills__level">Intermediate</span>
@@ -405,7 +456,7 @@
             <option value="United States">United States</option>
         </select>
         <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
-        <button onclick="closeOrderForm()">Cancel Order</button>
+        <button class="cancel" onclick="closeOrderForm()">Cancel Order</button>
     </div>
 
     <!--=============== SCROLL UP ===============-->

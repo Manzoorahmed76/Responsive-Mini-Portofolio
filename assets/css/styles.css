@@ -538,3 +538,29 @@ body.dark-theme {
     margin: 4.5rem 0 2.5rem;
   }
 }
+
+    .projects__card {
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Transparent border */
+    padding: 10px;
+    overflow: hidden;
+}
+
+.projects__button-buy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.projects__button-buy:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+

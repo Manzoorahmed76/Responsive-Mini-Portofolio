@@ -101,7 +101,7 @@
                     <article class="projects__card">
                         <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
                         <img src="assets/img/project1.webp" alt="" class="projects__img">
-                        <button class="projects__button-buy">Buy Now</button> <!-- Buy Now button -->
+                        <button class="projects__button-buy" onclick="openOrderForm('Nexion', '$50')">Buy Now</button> <!-- Buy Now button -->
 
                         <div class="projects__modal">
                             <div>
@@ -116,7 +116,7 @@
 
                     <article class="projects__card">
                         <img src="assets/img/project2.webp" alt="" class="projects__img">
-                        <button class="projects__button-buy">Buy Now</button> <!-- Buy Now button -->
+                        <button class="projects__button-buy" onclick="openOrderForm('YouTube Channel - Drone Videos', '$30')">Buy Now</button> <!-- Buy Now button -->
 
                         <div class="projects__modal">
                             <div>
@@ -219,11 +219,11 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="skills__area">
                         <h3 class="skills__title">Backend Developer</h3>
-                        <div class="skills__box">
 
+                        <div class="skills__box">
                             <div class="skills__group">
 
                                 <div class="skills__data">
@@ -278,10 +278,74 @@
         </span>
     </footer>
 
+    <!-- Order Form Popup -->
+    <div class="overlay" id="overlay" onclick="closeOrderForm()"></div>
+    <div class="popup" id="order-form">
+        <h3>Order Now</h3>
+        <p>Product: <span id="product-name"></span></p>
+        <p>Price: <span id="product-price"></span></p>
+        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
+        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
+        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
+        <select id="country" onchange="validateForm()">
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="United States">United States</option>
+        </select>
+        <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
+        <button onclick="closeOrderForm()">Cancel Order</button>
+    </div>
+
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+
+    <!--=============== ORDER FORM JS ===============-->
+    <script>
+        function openOrderForm(product, price) {
+            document.getElementById('product-name').innerText = product;
+            document.getElementById('product-price').innerText = price;
+            document.getElementById('order-form').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeOrderForm() {
+            document.getElementById('order-form').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function validateForm() {
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var submitButton = document.getElementById('submit-button');
+
+            if (phone && email && name && country) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        function sendOrder() {
+            var productName = document.getElementById('product-name').innerText;
+            var price = document.getElementById('product-price').innerText;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var message = "Product: " + productName + "\nPrice: " + price + "\nPhone: " + phone + "\nEmail: " + email + "\nName: " + name + "\nCountry: " + country;
+            var encodedMessage = encodeURIComponent(message);
+
+            var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>

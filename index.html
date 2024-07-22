@@ -128,48 +128,7 @@
                             </div>
                         </div>
                     </article>
-                    <!--
-                    <article class="projects__card">
-                        <img src="assets/img/project3.jpg" alt="" class="projects__img">
-
-                        <div class="projects__modal">
-                            <div>
-                                <span class="projects__subtitle">Movil</span>
-                                <h3 class="projects__title">Fast food app</h3>
-                                <a href="#" class="projects__button button button__small">
-                                    <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projects__card">
-                        <img src="assets/img/project4.jpg" alt="" class="projects__img">
-
-                        <div class="projects__modal">
-                            <div>
-                                <span class="projects__subtitle">Movil</span>
-                                <h3 class="projects__title">Travel app</h3>
-                                <a href="#" class="projects__button button button__small">
-                                    <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projects__card">
-                        <img src="assets/img/project5.jpg" alt="" class="projects__img">
-
-                        <div class="projects__modal">
-                            <div>
-                                <span class="projects__subtitle">Design</span>
-                                <h3 class="projects__title">Music app design</h3>
-                                <a href="#" class="projects__button button button__small">
-                                    <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>-->
+                    <
                 </div>
 
                 <!--=============== SKILLS ===============-->
@@ -277,75 +236,6 @@
             &#169; Bedimcode. All rigths reserved
         </span>
     </footer>
-
-    <!-- Order Form Popup -->
-    <div class="overlay" id="overlay" onclick="closeOrderForm()"></div>
-    <div class="popup" id="order-form">
-        <h3>Order Now</h3>
-        <p>Product: <span id="product-name"></span></p>
-        <p>Price: <span id="product-price"></span></p>
-        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
-        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
-        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
-        <select id="country" onchange="validateForm()">
-            <option value="Pakistan">Pakistan</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="United States">United States</option>
-        </select>
-        <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
-        <button onclick="closeOrderForm()">Cancel Order</button>
-    </div>
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="assets/js/scrollreveal.min.js"></script>
-
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
-
-    <!--=============== ORDER FORM JS ===============-->
-    <script>
-        function openOrderForm(product, price) {
-            document.getElementById('product-name').innerText = product;
-            document.getElementById('product-price').innerText = price;
-            document.getElementById('order-form').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        function closeOrderForm() {
-            document.getElementById('order-form').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        function validateForm() {
-            var phone = document.getElementById('phone').value;
-            var email = document.getElementById('email').value;
-            var name = document.getElementById('name').value;
-            var country = document.getElementById('country').value;
-
-            var submitButton = document.getElementById('submit-button');
-
-            if (phone && email && name && country) {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = true;
-            }
-        }
-
-        function sendOrder() {
-            var productName = document.getElementById('product-name').innerText;
-            var price = document.getElementById('product-price').innerText;
-            var phone = document.getElementById('phone').value;
-            var email = document.getElementById('email').value;
-            var name = document.getElementById('name').value;
-            var country = document.getElementById('country').value;
-
-            var message = "Product: " + productName + "\nPrice: " + price + "\nPhone: " + phone + "\nEmail: " + email + "\nName: " + name + "\nCountry: " + country;
-            var encodedMessage = encodeURIComponent(message);
-
-            var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
-            window.open(url, '_blank');
-        }
     </script>
 </body>
 </html>

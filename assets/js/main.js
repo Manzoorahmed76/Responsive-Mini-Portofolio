@@ -64,3 +64,20 @@ sr.reveal(`.profile__info-group`, {interval: 100, delay: 700})
 sr.reveal(`.profile__buttons`, {delay: 800})
 sr.reveal(`.filters__content`, {delay: 900})
 sr.reveal(`.filters`, {delay: 1000})
+
+// Add this code to your main.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const newProjectsButton = document.getElementById('new-projects-button');
+    const deprecatedProjectsSection = document.querySelector('[data-content="#projects"]');
+    const newProjectsSection = document.querySelector('[data-content="#new-projects"]');
+
+    newProjectsButton.addEventListener('click', function() {
+        // Toggle active class on buttons
+        newProjectsButton.classList.add('filter-tab-active');
+        deprecatedProjectsButton.classList.remove('filter-tab-active');
+
+        // Toggle visibility of sections
+        newProjectsSection.classList.add('filters__active');
+        deprecatedProjectsSection.classList.remove('filters__active');
+    });
+});

@@ -14,6 +14,75 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>NANO C-k - Portfolio</title>
+
+    <style>
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+    </style>
+
+    <script>
+        function openOrderForm(product, price) {
+            document.getElementById('product-name').innerText = product;
+            document.getElementById('product-price').innerText = price;
+            document.getElementById('order-form').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeOrderForm() {
+            document.getElementById('order-form').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function validateForm() {
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var submitButton = document.getElementById('submit-button');
+
+            if (phone && email && name && country) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        function sendOrder() {
+            var productName = document.getElementById('product-name').innerText;
+            var price = document.getElementById('product-price').innerText;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var message = "Product: " + productName + "\nPrice: " + price + "\nPhone: " + phone + "\nEmail: " + email + "\nName: " + name + "\nCountry: " + country;
+            var encodedMessage = encodeURIComponent(message);
+
+            var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
+            window.open(url, '_blank');
+        }
+    </script>
 </head>
 <body>
     <!--=============== HEADER ===============-->
@@ -128,7 +197,6 @@
                             </div>
                         </div>
                     </article>
-                    <
                 </div>
 
                 <!--=============== SKILLS ===============-->
@@ -152,18 +220,18 @@
     
                                     <div>
                                         <h3 class="skills__name">CSS</h3>
-                                        <span class="skills__level">Intermediate</span>
+                                        <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
                             </div>
-                            
+    
                             <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
     
                                     <div>
-                                        <h3 class="skills__name">EJS</h3>
-                                        <span class="skills__level">Basic</span>
+                                        <h3 class="skills__name">JavaScript</h3>
+                                        <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
     
@@ -171,58 +239,149 @@
                                     <i class="ri-checkbox-circle-line"></i>
     
                                     <div>
-                                        <h3 class="skills__name">Javascript</h3>
+                                        <h3 class="skills__name">VueJS</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="skills__area">
                         <h3 class="skills__title">Backend Developer</h3>
 
                         <div class="skills__box">
                             <div class="skills__group">
-
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
+    
                                     <div>
                                         <h3 class="skills__name">Node Js</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">PHP</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Python</h3>
                                         <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
     
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
+    
                                     <div>
-                                        <h3 class="skills__name">NPM discord.js</h3>
-                                        <span class="skills__level">Advance</span>
+                                        <h3 class="skills__name">MySQL</h3>
+                                        <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
-
                             </div>
-                            
-                            <div class="skills__group">
+                        </div>
+                    </div>
 
+                    <div class="skills__area">
+                        <h3 class="skills__title">Designer</h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
+    
                                     <div>
-                                        <h3 class="skills__name">Python</h3>
-                                        <span class="skills__level">Basic</span>
+                                        <h3 class="skills__name">Figma</h3>
+                                        <span class="skills__level">Advanced</span>
                                     </div>
                                 </div>
     
                                 <div class="skills__data">
                                     <i class="ri-checkbox-circle-line"></i>
+    
                                     <div>
-                                        <h3 class="skills__name">Lua</h3>
+                                        <h3 class="skills__name">Adobe XD</h3>
                                         <span class="skills__level">Intermediate</span>
                                     </div>
                                 </div>
-
                             </div>
+    
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Photoshop</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Blender</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="skills__area">
+                        <h3 class="skills__title">Others</h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Docker</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Kubernetes</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">GIT</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">SCRUM</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -230,12 +389,34 @@
         </section>
     </main>
 
-    <!--=============== FOOTER ===============-->
-    <footer class="footer container">
-        <span class="footer__copy">
-            &#169; Bedimcode. All rigths reserved
-        </span>
-    </footer>
-    </script>
+    <!--=============== ORDER FORM POPUP ===============-->
+    <div class="overlay" id="overlay" onclick="closeOrderForm()"></div>
+    <div class="popup" id="order-form">
+        <h3>Order Now</h3>
+        <p>Product: <span id="product-name"></span></p>
+        <p>Price: <span id="product-price"></span></p>
+        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
+        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
+        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
+        <select id="country" onchange="validateForm()">
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="United States">United States</option>
+        </select>
+        <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
+        <button onclick="closeOrderForm()">Cancel Order</button>
+    </div>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
